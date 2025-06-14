@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block title %}{{ config.title }}{% endblock %}
+
+{% block body %}
+<main class="home">
+  <div class="header">
+    <img src="/images/logo.png" class="logo" alt="Logo"/>
+    <br />
+    <div class="text">
+      <p class="title">HIAS</p>
+      <p class="subtitle">Junying Li's Research Group</p>
+    </div>
+  </div>
+
+  <div class="intro">
+    <p>{{ section.extra.short_intro }}</p>
+  </div>
+
+  <div class="flex">
+    <section class="posts-section">
+      <h2>General Information</h2>
+      {{ section.content | safe }}
+      <br />
+    </section>
+
+    <section class="pages-section">
+      <h2>Pages</h2>
+
+      <ul class="pages">
+        <li>
+          <a href="{{ config.base_url }}/about/">
+            <i class="fas fa-info-circle"></i>About
+          </a>
+          <p>General information about our team</p>
+        </li>
+        <li>
+          <a href="{{ config.base_url }}/members/">
+            <i class="fas fa-user"></i>Members
+          </a>
+          <p>A catalog of members and their personal pages</p>
+        </li>
+        <li>
+          <a href="{{ config.base_url }}/posts/">
+            <i class="fas fa-comment"></i>Publications
+          </a>
+          <p>Our library of papers published by team members</p>
+        </li>
+        <li>
+          <a href="{{ config.base_url }}/highlights/">
+            <i class="fas fa-star"></i>Highlights
+          </a>
+          <p>Our highlight events of the team or its members</p>
+        </li>
+        <li>
+          <a href="{{ config.base_url }}/relevant-units/">
+            <i class="fas fa-link"></i>Relevant Units
+          </a>
+          <p>The index of the homepage of our relevant unit</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+</main>
+{% endblock %}
