@@ -8,8 +8,8 @@ title = "HIAS-Junying Li's Research Group"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-generate_feed = true
-feed_filename = "rss.xml"
+generate_feeds = true
+feed_filenames = "rss.xml"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
