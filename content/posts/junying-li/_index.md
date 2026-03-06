@@ -7,6 +7,8 @@ extra.fullname = "Junying Li"
 extra.intro = "Postgraduate supervisor, research direction is integrated optoelectronic materials, devices and their applications."
 +++
 
+> This page was last updated on June 18, 2025 (UTC+8). For the latest information, please visit [the UCAS tutor's personal page](https://people.ucas.ac.cn/~0077388).
+
 Research direction including:
 
 1. Phase change materials and their non-volatile electrical/optical reconfigurable photonic devices
