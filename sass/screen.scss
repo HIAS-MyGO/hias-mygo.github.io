@@ -630,3 +630,29 @@ ul.pages {
     }
   }
 }
+table{
+    display: table;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+th, td{
+  padding: 10px 8px;
+}
+th{
+  border-bottom: 2px solid #333;
+  background-color: #f5f5f5;
+}
+td:first-child,
+th:first-child{
+  white-space: nowrap;
+}
+table-wrapper{
+  overflow-x: auto;
+}
+.no-wrap{
+  white-space: nowrap;
+}

@@ -10,13 +10,13 @@
 </head>
 <body class="{{ section.extra.body_class | default(value="") }}">
   <main class="banner">
-    <center><p>🚧This site is under construction...</p></center>
+    <center><p>🚧This site is currently under construction…</p></center>
   </main>
   {% block body %}{% endblock %}
   <footer class="text-center">
     <div class="copyright">
-      Copyright © {{ now() | date(format="%Y") }} {{ config.extra.author }} &mdash;
-      <a href="{{ config.extra.source }}">Website Sources</a>
+      Copyright © {{ now() | date(format="%Y") }} {{ config.extra.author }}
+    </br>This site was last updated on <span class="no-wrap">2026-04-11(UTC+8)</span>.<a href="{{ config.extra.source }}">Website Sources</a>
     </div>
   </footer>
 </body>
