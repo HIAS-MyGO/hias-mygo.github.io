@@ -1,9 +1,9 @@
 # The URL the site will be built for
 base_url = "https://mygo.vantao.cn"
 
-title = "HIAS-Junying Li's Research Group"
+title = "PhotoLics"
 
-# description = "San Diego Killifish and L"
+description = "Website of Junying Li's Research Group."
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
