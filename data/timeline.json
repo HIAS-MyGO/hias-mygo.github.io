@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2026-04-01",
+    "date_display": "2026.04.01",
+    "title": "第 3 篇论文",
+    "description": "Meet your new productivity assistant! For April Fools' Day, we're introducing Clippy.",
+    "image": "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80",
+    "image_alt": "Clippy Integration",
+    "links": {
+      "webpage": "",
+      "pdf": "https://example.com/paper.pdf",
+      "abstract": "这里写摘要文本，点击后展开显示",
+      "bibtex": "@article{example2025,\n  title={...},\n  author={...}\n}",
+      "arxiv": "https://arxiv.org/abs/2501.00000",
+      "code": "https://github.com/example/repo"
+    }
+  },
+  {
+    "date": "2025-04-01",
+    "date_display": "2025.04.01",
+    "title": "第 2 篇论文",
+    "description": "Meet your new productivity assistant! For April Fools' Day, we're introducing Clippy.",
+    "image": "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80",
+    "image_alt": "Clippy Integration",
+    "links": {
+      "webpage": "https://example.com",
+      "pdf": "https://example.com/paper.pdf",
+      "abstract": "这里写摘要文本，点击后展开显示",
+      "bibtex": "@article{example2025,\n  title={...},\n  author={...}\n}",
+      "arxiv": "https://arxiv.org/abs/2501.00000",
+      "code": "https://github.com/example/repo"
+    }
+  },
+  {
+    "date": "2025-03-01",
+    "date_display": "2025.03.01",
+    "title": "第 1 篇论文",
+    "description": "Meet your new productivity assistant! For April Fools' Day, we're introducing Clippy.",
+    "image": "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80",
+    "image_alt": "Clippy Integration",
+    "links": {
+      "webpage": "https://example.com",
+      "pdf": "https://example.com/paper.pdf",
+      "abstract": "这里写摘要文本，点击后展开显示",
+      "bibtex": "@article{example2025,\n  title={...},\n  author={...}\n}",
+      "arxiv": "https://arxiv.org/abs/2501.00000",
+      "code": "https://github.com/example/repo"
+    }
+  }
+]

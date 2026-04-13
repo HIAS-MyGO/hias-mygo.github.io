@@ -1,0 +1,218 @@
+{% set items = load_data(path="data/timeline.json") %}
+
+<style>
+.tl-wrap {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-family: inherit;
+}
+.tl-item {
+  position: relative;
+  padding-left: 1.75rem;
+  padding-bottom: 2.5rem;
+  border-left: 2px solid #e5e7eb;
+}
+.tl-item:last-child {
+  padding-bottom: 0;
+  border-left: 2px solid #e5e7eb;  /* 贯穿，不截断 */
+}
+/* 最后一条的竖线在 dot 以下不显示 */
+.tl-item:last-child::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 20px;           /* dot 底部以下 */
+  bottom: 0;
+  width: 2px;
+  background: #fff;    /* 用背景色盖掉 */
+}
+.tl-dot {
+  position: absolute;
+  left: -5px;
+  top: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #636365;
+  z-index: 1;
+}
+.tl-date {
+  font-size: 1.5rem;
+  color: #9ca3af;
+  margin-bottom: 0rem;
+  display: block;
+}
+.tl-content {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.tl-img-wrap {
+  flex: 0 0 25%;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+.tl-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.tl-text {
+  flex: 1;
+  min-width: 0;
+}
+.tl-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.4rem;
+}
+.tl-desc {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+.tl-links {
+  font-size: 0.9rem;
+  color: #6b7280;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.3rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.tl-links a,
+.tl-links button {
+  color: #4f46e5;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+  font-family: inherit;
+}
+.tl-links a:hover,
+.tl-links button:hover { text-decoration: underline; }
+.tl-links .sep {
+  color: #d1d5db;
+  user-select: none;
+}
+.tl-expandable {
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #374151;
+  background: #f9fafb;
+  border-left: 3px solid #6366f1;
+  border-radius: 0 0.4rem 0.4rem 0;
+  padding: 0.75rem 1rem;
+  white-space: pre-wrap;
+}
+.tl-expandable.open { display: block; }
+
+@media (max-width: 600px) {
+  .tl-content { flex-direction: column; }
+  .tl-img-wrap { flex: none; width: 100%; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .tl-item       { border-color: #374151; }
+  .tl-item:last-child::after { background: #111827; }  /* 深色背景色 */
+  .tl-dot        { background: #9ca3af; }
+  .tl-title      { color: #f9fafb; }
+  .tl-desc       { color: #9ca3af; }
+  .tl-links a,
+  .tl-links button { color: #818cf8; }
+  .tl-links .sep { color: #4b5563; }
+  .tl-expandable { color: #d1d5db; background: #1f2937; border-color: #818cf8; }
+}
+</style>
+
+<div class="tl-wrap">
+  {% for item in items %}
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+
+      <time datetime="{{ item.date }}" class="tl-date">
+        {{ item.date_display }}
+      </time>
+
+      <div class="tl-content{% if not item.image %} no-image{% endif %}">
+
+        {% if item.image %}
+        <div class="tl-img-wrap">
+          <img src="{{ item.image }}" alt="{{ item.image_alt }}" loading="lazy">
+        </div>
+        {% endif %}
+
+        <div class="tl-text">
+          <h2 class="tl-title">{{ item.title }}</h2>
+          <p class="tl-desc">{{ item.description }}</p>
+
+          {% if item.links %}
+          {% set L = item.links %}
+          {% set_global has_prev = false %}
+          <div class="tl-links">
+
+            {% if L.webpage %}
+              {% if has_prev %}<span class="sep">|</span>{% endif %}
+              <a href="{{ L.webpage }}" target="_blank" rel="noopener">webpage</a>
+              {% set_global has_prev = true %}
+            {% endif %}
+
+            {% if L.pdf %}
+              {% if has_prev %}<span class="sep">|</span>{% endif %}
+              <a href="{{ L.pdf }}" target="_blank" rel="noopener">pdf</a>
+              {% set_global has_prev = true %}
+            {% endif %}
+
+            {% if L.abstract %}
+              {% if has_prev %}<span class="sep">|</span>{% endif %}
+              <button onclick="tlToggle('abs-{{ loop.index }}', this)">abstract</button>
+              {% set_global has_prev = true %}
+            {% endif %}
+
+            {% if L.bibtex %}
+              {% if has_prev %}<span class="sep">|</span>{% endif %}
+              <button onclick="tlToggle('bib-{{ loop.index }}', this)">bibtex</button>
+              {% set_global has_prev = true %}
+            {% endif %}
+
+            {% if L.arxiv %}
+              {% if has_prev %}<span class="sep">|</span>{% endif %}
+              <a href="{{ L.arxiv }}" target="_blank" rel="noopener">arXiv</a>
+              {% set_global has_prev = true %}
+            {% endif %}
+
+            {% if L.code %}
+              {% if has_prev %}<span class="sep">|</span>{% endif %}
+              <a href="{{ L.code }}" target="_blank" rel="noopener">code</a>
+            {% endif %}
+
+          </div>
+
+          {% if L.abstract %}
+          <div class="tl-expandable" id="abs-{{ loop.index }}">{{ L.abstract }}</div>
+          {% endif %}
+          {% if L.bibtex %}
+          <div class="tl-expandable" id="bib-{{ loop.index }}">{{ L.bibtex }}</div>
+          {% endif %}
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+function tlToggle(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
