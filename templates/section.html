@@ -3,7 +3,11 @@
 {% block title %}{{ section.title }} - {{ config.title }}{% endblock %}
 
 {% block body %}
-<h1 class="logo"><a href="{{ config.base_url }}/" class="no-border hover-underline">{{ config.title }}</a></h1>
+<h1 class="logo">
+  <a href="{{ config.base_url }}/" class="no-border hover-underline">{{ config.title }}</a>
+  <br>
+  <a class="no-border subtitle">{{ config.description }}</a>
+</h1>
 
 <nav>
   {% for ancestor in section.ancestors %}
@@ -89,9 +93,9 @@
   {% endif %}
 
   {% if section.extra.type == "highlights" %}
-    <div class="title">
+    <!-- <div class="title">
       <a href="{{ config.base_url }}{{ section.path }}">{{ section.title }}</a>
-    </div>
+    </div> -->
     {{ section.content | safe }}
     {% set_global pages = [] %}
     {% set section = get_section(path="posts/_index.md", metadata_only=true) %}

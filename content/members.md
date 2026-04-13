@@ -1,5 +1,6 @@
 +++
 title = "Members"
+template = "page.html"
 +++
 
 > Here you will find a list of group members and basic information about them.

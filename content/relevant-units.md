@@ -1,5 +1,6 @@
 +++
 title = "Relevant Units"
+template = "page.html"
 +++
 
 Here you will find a index of the homepage of our relevant unit:

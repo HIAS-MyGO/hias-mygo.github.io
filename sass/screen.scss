@@ -584,12 +584,25 @@ ul.pages {
       }
     }
   }
+  main.home .header .text {
+    .title {
+      font-size: 2.5em;
+    }
+    .subtitle {
+      font-size: 1.4em;
+    }
+  }
 }
 
 @media screen and (max-width: 375px) {
   main.home {
     h1 {
       font-size: 4em;
+    }
+  }
+  main.home .header .text {
+    .subtitle {
+      font-size: 1.3em;
     }
   }
   article {
@@ -661,4 +674,7 @@ th:not(:first-child){
 }
 .no-wrap{
   white-space: nowrap;
+}
+.subtitle{
+  font-size: medium;
 }
