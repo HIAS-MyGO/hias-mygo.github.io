@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications Timeline - PhotoLix</title>
+  <link rel="stylesheet" href="https:&#x2F;&#x2F;mygo.vantao.cn/screen.css" type="text/css" charset="utf-8" />
+  <link rel="alternate" type="application/rss+xml" href="https:&#x2F;&#x2F;mygo.vantao.cn/rss.xml" title="PhotoLix" />
+  
+    <meta property="og:url" content="https:&#x2F;&#x2F;mygo.vantao.cn&#x2F;pub-timeline&#x2F;" />
+    <meta property="og:title" content="Publications Timeline" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+
+</head>
+<body class="">
+  <main class="banner">
+    <center><p>🚧This site is currently under construction…</p></center>
+  </main>
+  
+<h1 class="logo">
+  <a href="https:&#x2F;&#x2F;mygo.vantao.cn/" class="no-border hover-underline">PhotoLix</a>
+  <br>
+  <a class="no-border subtitle">Junying Li&#x27;s Research Group.</a>
+</h1>
+
+<nav>
+  
+    
+    
+      <a href="https:&#x2F;&#x2F;mygo.vantao.cn&#x2F;" class="no-border hover-underline">Home</a>
+    
+  
+  <span class="breadcrumb-sep">/</span>
+  <a href="https:&#x2F;&#x2F;mygo.vantao.cn&#x2F;pub-timeline&#x2F;" class="no-border hover-underline">Publications Timeline</a>
+  <hr />
+</nav>
+
+<article id="pub-timeline">
+
+  <div class="title">
+    <!-- <a href="https:&#x2F;&#x2F;mygo.vantao.cn&#x2F;pub-timeline&#x2F;">Publications Timeline</a> -->
+    
+  </div>
+
+  <div class="post-body">
+    
+
+<style>
+.tl-wrap {
+  max-width: 52rem;
+  margin: 0 auto;
+  font-family: inherit;
+}
+.tl-item {
+  position: relative;
+  padding-left: 1.75rem;
+  padding-bottom: 2.5rem;
+  border-left: 2px solid #e5e7eb;
+}
+.tl-item:last-child {
+  padding-bottom: 0;
+  border-left: 2px solid #e5e7eb;  /* 贯穿，不截断 */
+}
+/* 最后一条的竖线在 dot 以下不显示 */
+.tl-item:last-child::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 20px;           /* dot 底部以下 */
+  bottom: 0;
+  width: 2px;
+  background: #fff;    /* 用背景色盖掉 */
+}
+.tl-dot {
+  position: absolute;
+  left: -5px;
+  top: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #636365;
+  z-index: 1;
+}
+.tl-date {
+  font-size: 1.5rem;
+  color: #9ca3af;
+  margin-bottom: 0rem;
+  display: block;
+}
+.tl-content {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.tl-img-wrap {
+  flex: 0 0 28%;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+.tl-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.tl-text {
+  flex: 1;
+  min-width: 0;
+}
+.tl-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.4rem;
+}
+.tl-desc {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+.tl-links {
+  font-size: 0.9rem;
+  color: #6b7280;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.3rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.tl-links a,
+.tl-links button {
+  color: #4f46e5;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+  font-family: inherit;
+}
+.tl-links a:hover,
+.tl-links button:hover { text-decoration: underline; }
+.tl-links .sep {
+  color: #d1d5db;
+  user-select: none;
+}
+.tl-expandable {
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #374151;
+  background: #f9fafb;
+  border-left: 3px solid #6366f1;
+  border-radius: 0 0.4rem 0.4rem 0;
+  padding: 0.75rem 1rem;
+  white-space: pre-wrap;
+}
+.tl-expandable.open { display: block; }
+
+@media (max-width: 600px) {
+  .tl-content { flex-direction: column; }
+  .tl-img-wrap { flex: none; width: 100%; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .tl-item       { border-color: #374151; }
+  .tl-item:last-child::after { background: #111827; }  /* 深色背景色 */
+  .tl-dot        { background: #9ca3af; }
+  .tl-title      { color: #f9fafb; }
+  .tl-desc       { color: #9ca3af; }
+  .tl-links a,
+  .tl-links button { color: #818cf8; }
+  .tl-links .sep { color: #4b5563; }
+  .tl-expandable { color: #d1d5db; background: #1f2937; border-color: #818cf8; }
+}
+</style>
+
+<div class="tl-wrap">
+  
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+
+      <time datetime="2026-04-01" class="tl-date">
+        2026.04.01
+      </time>
+
+      <div class="tl-content">
+
+        
+        <div class="tl-img-wrap">
+          <img src="https:&#x2F;&#x2F;ts1.tc.mm.bing.net&#x2F;th&#x2F;id&#x2F;R-C.e7e92f2945c1bb72539ddd1e23bd175a?rik=hEg1nZenW9N5jg&amp;riu=http%3a%2f%2fk.sinaimg.cn%2fn%2fsinacn22%2f340%2fw690h450%2f20181101%2fc987-hnfikve4902163.jpg%2fw700d1q75cms.jpg&amp;ehk=fYSP0z%2b%2fL9MjwxRy4HUuOGc87UCmrDtoObkjGo6vNr0%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="Clippy Integration" loading="lazy">
+        </div>
+        
+
+        <div class="tl-text">
+          <h2 class="tl-title">第 3 篇论文</h2>
+          <p class="tl-desc">Meet your new productivity assistant! For April Fools&#x27; Day, we&#x27;re introducing Clippy.</p>
+
+          
+          
+          
+          <div class="tl-links">
+
+            
+
+            
+              
+              <a href="https:&#x2F;&#x2F;example.com&#x2F;paper.pdf" target="_blank" rel="noopener">pdf</a>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <button onclick="tlToggle('abs-1', this)">abstract</button>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <button onclick="tlToggle('bib-1', this)">bibtex</button>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <a href="https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2501.00000" target="_blank" rel="noopener">arXiv</a>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;example&#x2F;repo" target="_blank" rel="noopener">code</a>
+            
+
+          </div>
+
+          
+          <div class="tl-expandable" id="abs-1">这里写摘要文本，点击后展开显示</div>
+          
+          
+          <div class="tl-expandable" id="bib-1">@article{example2025,
+  title={...},
+  author={...}
+}</div>
+          
+
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+
+      <time datetime="2025-04-01" class="tl-date">
+        2025.04.01
+      </time>
+
+      <div class="tl-content">
+
+        
+        <div class="tl-img-wrap">
+          <img src="https:&#x2F;&#x2F;ts1.tc.mm.bing.net&#x2F;th&#x2F;id&#x2F;R-C.e7e92f2945c1bb72539ddd1e23bd175a?rik=hEg1nZenW9N5jg&amp;riu=http%3a%2f%2fk.sinaimg.cn%2fn%2fsinacn22%2f340%2fw690h450%2f20181101%2fc987-hnfikve4902163.jpg%2fw700d1q75cms.jpg&amp;ehk=fYSP0z%2b%2fL9MjwxRy4HUuOGc87UCmrDtoObkjGo6vNr0%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="Clippy Integration" loading="lazy">
+        </div>
+        
+
+        <div class="tl-text">
+          <h2 class="tl-title">第 2 篇论文</h2>
+          <p class="tl-desc">Meet your new productivity assistant! For April Fools&#x27; Day, we&#x27;re introducing Clippy.</p>
+
+          
+          
+          
+          <div class="tl-links">
+
+            
+              
+              <a href="https:&#x2F;&#x2F;example.com" target="_blank" rel="noopener">webpage</a>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <a href="https:&#x2F;&#x2F;example.com&#x2F;paper.pdf" target="_blank" rel="noopener">pdf</a>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <button onclick="tlToggle('abs-2', this)">abstract</button>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <button onclick="tlToggle('bib-2', this)">bibtex</button>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <a href="https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2501.00000" target="_blank" rel="noopener">arXiv</a>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;example&#x2F;repo" target="_blank" rel="noopener">code</a>
+            
+
+          </div>
+
+          
+          <div class="tl-expandable" id="abs-2">这里写摘要文本，点击后展开显示</div>
+          
+          
+          <div class="tl-expandable" id="bib-2">@article{example2025,
+  title={...},
+  author={...}
+}</div>
+          
+
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+
+      <time datetime="2025-03-01" class="tl-date">
+        2025.03.01
+      </time>
+
+      <div class="tl-content">
+
+        
+        <div class="tl-img-wrap">
+          <img src="https:&#x2F;&#x2F;ts1.tc.mm.bing.net&#x2F;th&#x2F;id&#x2F;R-C.e7e92f2945c1bb72539ddd1e23bd175a?rik=hEg1nZenW9N5jg&amp;riu=http%3a%2f%2fk.sinaimg.cn%2fn%2fsinacn22%2f340%2fw690h450%2f20181101%2fc987-hnfikve4902163.jpg%2fw700d1q75cms.jpg&amp;ehk=fYSP0z%2b%2fL9MjwxRy4HUuOGc87UCmrDtoObkjGo6vNr0%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="Clippy Integration" loading="lazy">
+        </div>
+        
+
+        <div class="tl-text">
+          <h2 class="tl-title">第 1 篇论文</h2>
+          <p class="tl-desc">Meet your new productivity assistant! For April Fools&#x27; Day, we&#x27;re introducing Clippy.</p>
+
+          
+          
+          
+          <div class="tl-links">
+
+            
+              
+              <a href="https:&#x2F;&#x2F;example.com" target="_blank" rel="noopener">webpage</a>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <a href="https:&#x2F;&#x2F;example.com&#x2F;paper.pdf" target="_blank" rel="noopener">pdf</a>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <button onclick="tlToggle('abs-3', this)">abstract</button>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <button onclick="tlToggle('bib-3', this)">bibtex</button>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <a href="https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2501.00000" target="_blank" rel="noopener">arXiv</a>
+              
+            
+
+            
+              <span class="sep">|</span>
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;example&#x2F;repo" target="_blank" rel="noopener">code</a>
+            
+
+          </div>
+
+          
+          <div class="tl-expandable" id="abs-3">这里写摘要文本，点击后展开显示</div>
+          
+          
+          <div class="tl-expandable" id="bib-3">@article{example2025,
+  title={...},
+  author={...}
+}</div>
+          
+
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+<script>
+function tlToggle(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+  </div>
+
+</article>
+
+  <footer class="text-center">
+    <div class="copyright">
+      Copyright © 2026 Junying Li&#x27;s Research Group
+    </br>This site was last updated on <span class="no-wrap">2026-04-14(UTC+8)</span>.<a href="https:&#x2F;&#x2F;github.com&#x2F;HIAS-MyGO">Website Sources</a>
+    </div>
+  </footer>
+</body>
+</html>
+
